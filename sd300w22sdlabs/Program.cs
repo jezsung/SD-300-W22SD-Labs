@@ -5,12 +5,12 @@
 
 Dictionary<Product, int> inventory = new Dictionary<Product, int>
 {
-    {new Product("Chocolate-covered Beans", 2, "A12"),  3}
+    {new Product("Chocolate-covered Beans", 2, "A12", "BARCODE1"),  3}
 };
 
 VendingMachine vendingMachine = new VendingMachine(moneyFloat, inventory);
 
-vendingMachine.StockItem(new Product("Fried Spider", 4, "A13"), 4);
+vendingMachine.StockItem(new Product("Fried Spider", 4, "A13", "BARCODE2"), 4);
 foreach (KeyValuePair<Product, int> entity in inventory)
 {
     Console.WriteLine($"{entity.Key.Name}: {entity.Value}");
@@ -114,11 +114,13 @@ class Product
     public string Name { get; set; }
     public int Price { get; set; }
     public string Code { get; set; }
+    public string Barcode { get; }
 
-    public Product(string name, int price, string code)
+    public Product(string name, int price, string code, string barcode)
     {
         Name = name;
         Price = price;
         Code = code;
+        Barcode = barcode;
     }
 }
