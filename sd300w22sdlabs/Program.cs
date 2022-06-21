@@ -27,10 +27,10 @@ Console.WriteLine(vendingMachine.VendItem("A12", new List<int> { 5 }));
 class VendingMachine
 {
     public int SerialNumber { get; set; }
-    public Dictionary<int, int> MoneyFloat { get; set; }
-    public Dictionary<Product, int> Inventory { get; set; }
+    private Dictionary<int, int> MoneyFloat { get; set; }
+    private Dictionary<Product, int> Inventory { get; set; }
 
-    public static int SerialNumberCounter = 1;
+    private static int SerialNumberCounter = 1;
 
     public VendingMachine(Dictionary<int, int> moneyFloat, Dictionary<Product, int> inventory)
     {
